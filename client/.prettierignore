@@ -1,0 +1,8 @@
+# Ignore artifacts:
+/dist
+/coverage
+/build
+.angular
+.prettierignore
+/tmp
+/node_modules
