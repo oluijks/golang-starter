@@ -1,14 +1,14 @@
 import {Component, OnInit, Renderer2, inject, isDevMode} from '@angular/core'
 import {RouterOutlet} from '@angular/router'
+
 import {DOCUMENT, WINDOW} from './app.tokens'
-import {ThemeSwitcherComponent} from './shared/ui/components/theme-switcher/theme-switcher.component'
 
 @Component({
   standalone: true,
   selector: 'client-root',
   styleUrl: './app.component.css',
   templateUrl: './app.component.html',
-  imports: [RouterOutlet, ThemeSwitcherComponent],
+  imports: [RouterOutlet],
 })
 export class AppComponent implements OnInit {
   title = 'client'
