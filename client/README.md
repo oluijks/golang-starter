@@ -9,6 +9,7 @@ Just a minimal angular starter with some basic stuff I always seem to add.
 Version angular 17
 
 - eslint / prettier
+- jest for unit tests
 - named chunks in dev
 - inter variable font
 - some additional css resets
