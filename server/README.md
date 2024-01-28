@@ -33,12 +33,12 @@ Version go 1.21.5
 
 ### Resources
 
-https://mholt.github.io/json-to-go/
-https://github.com/brianvoe/gofakeit
-https://pkg.go.dev/github.com/go-playground/validator/v10
-https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
-https://chidiwilliams.com/posts/partially-updating-an-embedded-mongo-document-in-go
-https://pkg.go.dev/github.com/go-playground/validator/v10#hdr-Baked_In_Validators_and_Tags
+- https://mholt.github.io/json-to-go/
+- https://github.com/brianvoe/gofakeit
+- https://pkg.go.dev/github.com/go-playground/validator/v10
+- https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+- https://chidiwilliams.com/posts/partially-updating-an-embedded-mongo-document-in-go
+- https://pkg.go.dev/github.com/go-playground/validator/v10#hdr-Baked_In_Validators_and_Tags
 
 ### Usage
 
