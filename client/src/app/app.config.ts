@@ -2,8 +2,7 @@ import {ApplicationConfig} from '@angular/core'
 import {provideHttpClient} from '@angular/common/http'
 import {provideRouter} from '@angular/router'
 
-import {DOCUMENT} from '@angular/common'
-import {WINDOW} from './app.tokens'
+import {DOCUMENT, WINDOW} from './app.tokens'
 
 import {appRoutes} from './app.routes'
 
