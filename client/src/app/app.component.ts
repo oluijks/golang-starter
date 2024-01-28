@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
   title = 'client'
 
   #className = 'debug-screens'
-  #window: Window = inject(WINDOW)
   #document: Document = inject(DOCUMENT)
   #renderer: Renderer2 = inject(Renderer2)
 
