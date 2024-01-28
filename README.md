@@ -1,2 +1,3 @@
-# golang-starter
-Starter with angular client and golang rest api
+# Golang Angular Starter
+
+Starter with Angular client and Golang REST Api.
