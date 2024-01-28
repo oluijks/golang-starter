@@ -1,7 +1,7 @@
 import {Component, OnInit, Renderer2, inject, isDevMode} from '@angular/core'
 import {RouterOutlet} from '@angular/router'
 
-import {DOCUMENT, WINDOW} from './app.tokens'
+import {DOCUMENT} from './app.tokens'
 
 @Component({
   standalone: true,

@@ -1,10 +1,22 @@
 import {TestBed} from '@angular/core/testing'
 import {AppComponent} from './app.component'
+// import {DOCUMENT} from '@angular/common'
+import {WINDOW, DOCUMENT} from './app.tokens'
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [
+        {
+          provide: WINDOW,
+          useFactory: () => window,
+        },
+        {
+          provide: DOCUMENT,
+          useFactory: () => document,
+        },
+      ],
     }).compileComponents()
   })
 
