@@ -69,11 +69,6 @@ func (authHandler *AuthHandler) SignIn(ctx *gin.Context) {
 		return
 	}
 
-	// tokenMaker, err := token.NewPasetoMaker(authHandler.config.SymmectricTokenKey)
-	// if err != nil {
-	// 	log.Fatal("Error creating token maker:", err)
-	// }
-
 	err = utils.ComparePassword(account.Password, payload.Password)
 	if err != nil {
 		ctx.JSON(http.StatusUnauthorized, gin.H{})
