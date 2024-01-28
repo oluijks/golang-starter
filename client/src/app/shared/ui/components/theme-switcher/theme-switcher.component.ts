@@ -1,5 +1,12 @@
 import {NgIf} from '@angular/common'
-import {Component, Renderer2, effect, inject, signal} from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Renderer2,
+  effect,
+  inject,
+  signal,
+} from '@angular/core'
 
 import {DOCUMENT, WINDOW} from '../../../../app.tokens'
 
@@ -14,6 +21,7 @@ enum DarkMode {
   styleUrl: './theme-switcher.component.css',
   templateUrl: './theme-switcher.component.html',
   imports: [NgIf],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeSwitcherComponent {
   #key = 'darkMode'

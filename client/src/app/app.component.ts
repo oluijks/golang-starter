@@ -1,4 +1,11 @@
-import {Component, OnInit, Renderer2, inject, isDevMode} from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  Renderer2,
+  inject,
+  isDevMode,
+} from '@angular/core'
 import {RouterOutlet} from '@angular/router'
 
 import {DOCUMENT} from './app.tokens'
@@ -9,6 +16,7 @@ import {DOCUMENT} from './app.tokens'
   styleUrl: './app.component.css',
   templateUrl: './app.component.html',
   imports: [RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   title = 'client'

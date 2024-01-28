@@ -28,6 +28,7 @@ Version angular 17
 ### Packages
 
 - dayjs
+- valibot
 - prettier
 - prettier-eslint
 - eslint-config-prettier
