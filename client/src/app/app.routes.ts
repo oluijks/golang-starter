@@ -9,7 +9,7 @@ export const appRoutes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
-      import('./home/home.component').then(c => c.HomeComponent),
+      import('./home/feature/home.component').then(c => c.HomeComponent),
   },
   {
     path: '**',
