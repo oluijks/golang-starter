@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /**
- * Additional css resets
- * https://youtu.be/cCAtD_BAHNw?si=ABmG7Mrz9_9-iAEp 
+ * Additional css resets by Kevin Powell
+ * @see https://youtu.be/cCAtD_BAHNw?si=ABmG7Mrz9_9-iAEp 
  */
 
 h1,
@@ -30,6 +30,7 @@ p {
 }
 
 /** 
+ * Some sensible defaults for img by Harry Roberts
  * @see https://twitter.com/csswizardry/status/1717841334462005661
  *      https://csswizardry.com/2023/09/the-ultimate-lqip-lcp-technique/
  */
@@ -45,7 +46,7 @@ img {
 }
 
 /**
-  * Inter Font
+  * Inter Font by Rasmus Andersson
   * @see https://rsms.me/inter/
   */
 
