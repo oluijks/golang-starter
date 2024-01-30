@@ -42,4 +42,4 @@ Version go 1.21.5
 
 ### Usage
 
-Just clone it, do a search and replace for `oluijks/golang-starter/server`, a `make air` and you're good to go.
+Just clone it, do a search and replace for `oluijks/golang-starter/server`, adjust `app.env`, do a `make air` and you're good to go.
