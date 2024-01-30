@@ -1,4 +1,4 @@
-package controllers
+package handlers
 
 import (
 	"net/http"
@@ -19,14 +19,6 @@ func ResponseCreated(ctx *gin.Context) {
 	})
 }
 
-func ResponseUnAuthorized(ctx *gin.Context, err error) {
-	ctx.JSON(http.StatusUnauthorized, APIResponse{
-		Status:  http.StatusUnauthorized,
-		Message: "401 Unauthorized",
-		Data:    map[string]interface{}{"error": err.Error()},
-	})
-}
-
 func ResponseBadRequest(ctx *gin.Context, err error) {
 	ctx.JSON(http.StatusBadRequest, APIResponse{
 		Status:  http.StatusBadRequest,
@@ -35,10 +27,10 @@ func ResponseBadRequest(ctx *gin.Context, err error) {
 	})
 }
 
-func ResponseServerError(ctx *gin.Context, err error) {
-	ctx.JSON(http.StatusInternalServerError, APIResponse{
-		Status:  http.StatusInternalServerError,
-		Message: "500 Internal Server Error",
+func ResponseUnAuthorized(ctx *gin.Context, err error) {
+	ctx.JSON(http.StatusUnauthorized, APIResponse{
+		Status:  http.StatusUnauthorized,
+		Message: "401 Unauthorized",
 		Data:    map[string]interface{}{"error": err.Error()},
 	})
 }
@@ -47,6 +39,14 @@ func ResponseNotFound(ctx *gin.Context, err error) {
 	ctx.JSON(http.StatusNotFound, APIResponse{
 		Status:  http.StatusNotFound,
 		Message: "404 Not Found",
+		Data:    map[string]interface{}{"error": err.Error()},
+	})
+}
+
+func ResponseServerError(ctx *gin.Context, err error) {
+	ctx.JSON(http.StatusInternalServerError, APIResponse{
+		Status:  http.StatusInternalServerError,
+		Message: "500 Internal Server Error",
 		Data:    map[string]interface{}{"error": err.Error()},
 	})
 }

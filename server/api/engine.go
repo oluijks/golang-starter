@@ -11,16 +11,16 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/oluijks/golang-starter/server/api/controllers"
+	"github.com/oluijks/golang-starter/server/api/handlers"
 	"github.com/oluijks/golang-starter/server/internal/config"
 	"go.uber.org/fx"
 )
 
 func registerRoutes(
 	engine *gin.Engine,
-	ph *controllers.PingHandler,
-	uh *controllers.AccountHandler,
-	ah *controllers.AuthHandler,
+	ph *handlers.PingHandler,
+	uh *handlers.AccountHandler,
+	ah *handlers.AuthHandler,
 	config *config.Config) {
 	apiV1 := engine.Group("/api/v1")
 	{
@@ -40,9 +40,9 @@ func registerRoutes(
 
 func NewGinEngine(
 	lc fx.Lifecycle,
-	ph *controllers.PingHandler,
-	uh *controllers.AccountHandler,
-	ah *controllers.AuthHandler,
+	ph *handlers.PingHandler,
+	uh *handlers.AccountHandler,
+	ah *handlers.AuthHandler,
 	config *config.Config,
 ) *gin.Engine {
 	c, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)

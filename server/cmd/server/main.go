@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/oluijks/golang-starter/server/api"
-	"github.com/oluijks/golang-starter/server/api/controllers"
+	"github.com/oluijks/golang-starter/server/api/handlers"
 	"github.com/oluijks/golang-starter/server/internal/config"
 	"github.com/oluijks/golang-starter/server/internal/database"
 	"github.com/oluijks/golang-starter/server/internal/storage"
@@ -20,9 +20,9 @@ func main() {
 			database.NewMongoConnection,
 		),
 		fx.Provide(
-			controllers.NewPingHandlers,
-			controllers.NewAuthHandlers,
-			controllers.NewAccountHandlers,
+			handlers.NewPingHandlers,
+			handlers.NewAuthHandlers,
+			handlers.NewAccountHandlers,
 		),
 		fx.Invoke(api.NewGinEngine),
 	).Run()
