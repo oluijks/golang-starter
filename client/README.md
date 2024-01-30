@@ -33,6 +33,7 @@ Version angular 17
 - prettier-eslint
 - eslint-config-prettier
 - eslint-plugin-prettier
+- @angular-eslint/schematics
 - @ngrx/signals@latest
 - @ngrx/operators@latest
 
