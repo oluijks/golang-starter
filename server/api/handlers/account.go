@@ -54,15 +54,15 @@ func (accountHandler *AccountHandler) CreateAccount(ctx *gin.Context) {
 	ResponseCreated(ctx)
 }
 
-func (accountHandler *AccountHandler) ListUser(ctx *gin.Context) {
+func (accountHandler *AccountHandler) ListAccount(ctx *gin.Context) {
 	var req accountIDPayload
 	if err := ctx.ShouldBindUri(&req); err != nil {
 		ResponseBadRequest(ctx, err)
 		return
 	}
 
-	var user models.Account
-	user, err := accountHandler.store.ListAccount(req.ID)
+	var account models.Account
+	account, err := accountHandler.store.ListAccount(req.ID)
 	if err != nil {
 		if errors.Is(err, storage.ErrAccountNotFound) {
 			ResponseNotFound(ctx, err)
@@ -75,12 +75,12 @@ func (accountHandler *AccountHandler) ListUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, APIResponse{
 		Status:  http.StatusOK,
 		Message: "200 OK",
-		Data:    map[string]interface{}{"user": user},
+		Data:    map[string]interface{}{"account": account},
 	})
 }
 
-func (accountHandler *AccountHandler) ListUsers(ctx *gin.Context) {
-	users, err := accountHandler.store.ListAccounts()
+func (accountHandler *AccountHandler) ListAccounts(ctx *gin.Context) {
+	accounts, err := accountHandler.store.ListAccounts()
 	if err != nil {
 		ResponseNotFound(ctx, err)
 		return
@@ -89,24 +89,24 @@ func (accountHandler *AccountHandler) ListUsers(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, APIResponse{
 		Status:  http.StatusOK,
 		Message: "200 OK",
-		Data:    map[string]interface{}{"users": users},
+		Data:    map[string]interface{}{"accounts": accounts},
 	})
 }
 
-func (accountHandler *AccountHandler) UpdateUser(ctx *gin.Context) {
+func (accountHandler *AccountHandler) UpdateAccount(ctx *gin.Context) {
 	var req accountIDPayload
 	if err := ctx.ShouldBindUri(&req); err != nil {
 		ResponseBadRequest(ctx, err)
 		return
 	}
 
-	var user models.Account
-	if err := ctx.ShouldBindJSON(&user); err != nil {
+	var account models.Account
+	if err := ctx.ShouldBindJSON(&account); err != nil {
 		ResponseBadRequest(ctx, err)
 		return
 	}
 
-	if err := accountHandler.store.UpdateAccount(&user, req.ID); err != nil {
+	if err := accountHandler.store.UpdateAccount(&account, req.ID); err != nil {
 		if errors.Is(err, storage.ErrAccountNotFound) {
 			ResponseNotFound(ctx, err)
 			return
@@ -118,7 +118,7 @@ func (accountHandler *AccountHandler) UpdateUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, gin.H{})
 }
 
-func (accountHandler *AccountHandler) DeleteUser(ctx *gin.Context) {
+func (accountHandler *AccountHandler) DeleteAccount(ctx *gin.Context) {
 	var req accountIDPayload
 	if err := ctx.ShouldBindUri(&req); err != nil {
 		ResponseBadRequest(ctx, err)

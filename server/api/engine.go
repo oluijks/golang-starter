@@ -30,11 +30,11 @@ func registerRoutes(
 		auth.POST("/", ah.SignIn)
 
 		account := apiV1.Group("/account").Use(authMiddleware(config))
-		account.GET("/", uh.ListUsers)
-		account.GET("/:id", uh.ListUser)
+		account.GET("/", uh.ListAccounts)
+		account.GET("/:id", uh.ListAccount)
 		account.POST("/", uh.CreateAccount)
-		account.PATCH("/:id", uh.UpdateUser)
-		account.DELETE("/:id", uh.DeleteUser)
+		account.PATCH("/:id", uh.UpdateAccount)
+		account.DELETE("/:id", uh.DeleteAccount)
 	}
 }
 
