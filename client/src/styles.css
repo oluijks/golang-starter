@@ -29,6 +29,21 @@ p {
   }
 }
 
+/** 
+ * @see https://twitter.com/csswizardry/status/1717841334462005661
+ *      https://csswizardry.com/2023/09/the-ultimate-lqip-lcp-technique/
+ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
+
 /**
   * Inter Font
   * @see https://rsms.me/inter/
